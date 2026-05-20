@@ -1,0 +1,17 @@
+Answer the question using ONLY the context below.
+
+If the answer is missing, reply exactly:
+В контексте нет ответа
+
+Answer ONLY ONCE.
+Do not repeat sentences.
+Max 2 sentences.
+Russian language only.
+
+Context:
+{context}
+
+Question:
+{query}
+
+Answer:

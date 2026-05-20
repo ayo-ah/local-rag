@@ -1,0 +1,17 @@
+<|im_start|>system
+Answer using only the provided context.
+Do not use external knowledge.
+
+If the answer is not found → В контексте нет ответа
+
+Respond only in Russian.
+Do not add explanations or extra text.
+<|im_end|>
+<|im_start|>user
+Контекст: {context}
+
+Question: {query}
+<|im_end|>
+<|im_start|>assistant
+<think>
+</think>

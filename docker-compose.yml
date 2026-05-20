@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: pgvector_db
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  llm:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    container_name: llama_cpp
+    ports:
+      - "8001:8080"
+    volumes:
+      - ${LLM_MODEL_PATH}:/models:ro
+    command: >
+      -m /models/Qwen3-0.6B-Q8_0.gguf
+      -c 4096
+      -b 1024
+      -t 4
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: rag_app
+
+    env_file:
+      - .env.docker
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - db
+      - llm
+
+    command: >
+      python -m uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+
+
+volumes:
+  pgdata:

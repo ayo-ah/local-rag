@@ -1,0 +1,23 @@
+{
+    "output_dir": "data/experiments/references/eval",
+    "dataset_name": "dataset_v2.json",
+    "llm": {
+        "llm_max_context": 4096,
+        "llm_max_tokens": 256,
+        "llm_temperature": 0,
+        "llm_name": "qwen2.5_3b_q4",
+        "llm_stop": [
+            " {"
+        ]
+    },
+    "prompt": {
+        "task": "dataset_generation",
+        "version": "qwen2.5_3b_q4",
+        "root": "app/prompting/templates"
+    },
+    "questions_per_source": 20,
+    "limit_chunks": 500,
+    "source_id": [
+        "468018bd-af85-49aa-be07-c2dcf569e673"
+    ]
+}

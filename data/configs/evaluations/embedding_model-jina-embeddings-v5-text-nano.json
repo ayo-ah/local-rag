@@ -1,0 +1,12 @@
+{
+    "experiment_name": "embedding_model-jina-embeddings-v5-text-nano",
+    "dataset_path": "data/experiments/references/eval/dataset_v2.json",
+    "evaluation_dir": "data/experiments/evaluations",
+    "responses_path": "data/experiments/responses",
+    "evaluator": "saiga-8b-v7-q4_k_m",
+    "evaluator_prompt": {
+        "task": "evaluation",
+        "version": "saiga_8b_v1",
+        "root": "app/prompting/templates"
+    }
+}
